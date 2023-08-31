@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Share - Recipe Database</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/style.css') }}">
+    <script src="{{ url_for('static', filename='/recipeList.js') }}" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome, {{session['user_name']}}, {{session['user_id']}}</h1>
+        <p><a href="/logout" style="color: white">Logout</a></p>
+    </header>
+    <main>
+        <div class="container2">
+
+            <div class="box2">
+                <div class="subhead">
+                    <h2>All posted recipes</h2>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>&lt30 min</th>
+                            <th>Posted by</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recipeList">
+                        <!-- Recipe List Here -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="box">
+                <div class="subhead">
+                    <h2>Add New Recipe</h2>
+                </div>
+                <div id="recipeErrors" class="errorBox">
+                    <!-- Add Recipe Errors Here  -->
+                </div>
+                <form id="createRecipe" method="post">
+                    <label for="name" class="formlabel">Name</label>
+                    <input type="text" name="name" id="name" class="forminput" value="{{session['recipe_name']}}">
+                    <label for="description"  class="formlabel">Description</label>
+                    <textarea name="description" id="description" cols="30" rows="10" class="forminput">{{session['description']}}</textarea>
+                    <label for="instructions"  class="formlabel">Instructions</label>
+                    <textarea name="instructions" id="instructions" cols="30" rows="10" class="forminput">{{session['instructions']}}</textarea>
+                    <label for="date_cooked" class="formlabel">Date Cooked/Made:</label>
+                    <input type="date" id="date_cooked" name="date_cooked" class="forminput" value="{{session['date_cooked']}}">
+                    <label for="under_30"  class="formlabel">Under 30 minutes?</label>
+                    <div class="forminput">
+                        <input type="radio" id="yes" name="under_30" value="1">
+                        <label for="yes">Yes</label>
+                        <input type="radio" id="no" name="under_30" value="0" checked>
+                        <label for="no">No</label>
+                    </div>
+                    <input id="user_id" type="hidden" name="user_id" value="{{session['user_id']}}">
+                    <input type="hidden" name="first_name" value="{{session['user_name']}}">
+                    <input type="submit" value="Add Recipe" class="forminput">
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

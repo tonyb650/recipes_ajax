@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Share - Edit Recipe</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/style.css') }}">
+    <script src="{{ url_for('static', filename='/recipeEdit.js') }}" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Welcome, {{session['user_name']}}, {{session['user_id']}}</h1>
+        <a href="/recipes"style="color: white">Back to recipes</a>
+        <p><a href="/logout" style="color: white">Logout</a></p>
+    </header>
+    <main>
+        <div class="container">
+            <div class="box2">
+                <div id="recipeHead">
+                    <!-- Recipe Head Here -->
+                </div>
+                <table id="recipeShow">
+                    <!-- Recipe Details Here -->
+                </table>
+            </div>
+            <div class="box">
+                <div id="recipeErrors">
+                    <!-- Validation Errors here -->
+                </div>
+                <form id="editRecipeForm" method="post">
+                    <!-- Edit Recipe Form here -->
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

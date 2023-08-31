@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Share - Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='/style.css') }}">
+    <script src="{{ url_for('static', filename='/login.js') }}" defer></script>
+</head>
+<body>
+    <header>
+        <div>
+            <h1>Recipe Share</h1>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="box">
+                <h2>Register</h2>
+                <div id="regErrors" style="margin-left: 20px; color:red">
+                    <!-- Validation Errors Here -->
+                </div>
+                <form id="register" method="post">
+                    <label for="fName" class="formlabel">First Name</label>
+                    <input type="text" name="first_name" id="fName" value="{{session['first_name']}}" class="forminput">
+                    <label for="lName" class="formlabel">Last Name</label>
+                    <input type="text" name="last_name" id="lName" value="{{session['last_name']}}" class="forminput">
+                    <label for="email" class="formlabel">Email</label>
+                    <input type="text" id="email" name="email" value="{{session['email']}}"" class="forminput">
+                    <label for="password" class="formlabel">Password</label>
+                    <input type="password" id="password" name="password" value="{{session['password']}}" class="forminput">
+                    <label for="confirmPW" class="formlabel">Confirm Password</label>
+                    <input type="password" id="confirmPW" name="confirm_password" value="{{session['confirm_password']}}" class="forminput">
+                    <input type="submit" value="Register" class="forminput" id="reg_submit">
+                </form>
+            </div>
+            <div class="box">
+                <h2>Log in</h2>
+                <div id="loginErrors" style="margin-left: 20px; color:red">
+                    <!-- Validation Errors Here -->
+                </div>
+                <form id="login" method="post">
+                    <label for="login_email" class="formlabel">Email</label>
+                    <input type="text" id="login_email" name="email" value="{{session['login_email']}}" class="forminput">
+                    <label for="login_password" class="formlabel">Password</label>
+                    <input type="password" id="login_password" name="password" class="forminput">
+                    <input type="submit" value="Log In" class="forminput" id="login_submit">
+                </form>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

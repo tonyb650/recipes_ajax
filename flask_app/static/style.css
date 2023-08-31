@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nunito+Sans&display=swap');
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nanum Gothic', 'Nunito Sans', sans-serif;
+}
+
+header {
+    background-color: darkolivegreen;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1000px;
+    align-items: center;
+    margin: auto;
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.subhead {
+    text-align: center;
+    background-color: #eee;
+    border-radius: 5px;
+    margin: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+main {
+    max-width: 1000px;
+    margin: auto;
+}
+
+.container {
+    margin-top: 10px;
+    background-color: darkolivegreen;
+    display: flex;
+    border-radius: 5px;
+}
+
+.container2 {
+    margin-top: 10px;
+    background-color: darkolivegreen;
+    display: flex;
+    /* flex-direction: column; */
+    border-radius: 5px;
+}
+
+.box {
+    flex:1;
+    background-color: #eee;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.box2 {
+    flex:2;
+    background-color: #eee;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+.row {
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.column {
+    margin: 20px;
+}
+h2 {
+    display: inline-block;
+    /* background-color: #ddd; */
+    /* border-radius: 5px; */
+    margin: 10px;
+    margin-top: 20px;
+    /* padding: 10px; */
+}
+
+.forminput {
+    display: block;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.formlabel {
+    display: block;
+    margin-left: 20px;
+}
+
+table {
+    background-color: white;
+    border-radius: 5px;
+    margin: 25px;
+    align-items: center;
+    align-content: center;
+}
+
+td, th {
+    padding: 5px;
+    padding-left: 40px;
+
+}
+
+.errorBox {
+    margin-left: 20px;
+    color: red
+}
